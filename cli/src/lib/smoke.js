@@ -15,7 +15,12 @@ export function smokeCheck(destRoot, stack) {
     return { ok: true, skippedCommand: true };
   }
 
-  const which = spawnSync("sh", ["-c", `command -v ${command}`], { encoding: "utf8" });
+  const env = { ...process.env };
+  delete env.NODE_OPTIONS;
+  delete env.NODE_INSPECT_RESUME_ON_START;
+  delete env.VSCODE_INSPECTOR_OPTIONS;
+
+  const which = spawnSync("sh", ["-c", `command -v ${command}`], { encoding: "utf8", env });
   if (which.status !== 0) {
     return { ok: true, skippedCommand: true, reason: `${command} not installed` };
   }
@@ -23,7 +28,13 @@ export function smokeCheck(destRoot, stack) {
   const result = spawnSync(command, stack.smoke.args || [], {
     cwd: destRoot,
     encoding: "utf8",
+    env,
+    timeout: 15000,
   });
+
+  if (result.error?.code === "ETIMEDOUT" || result.signal === "SIGTERM") {
+    throw new Error(`Smoke command timed out (${command})`);
+  }
 
   if (result.status !== 0) {
     throw new Error(
