@@ -1,0 +1,8 @@
+{
+  "id": "minio",
+  "name": "MinIO",
+  "group": "storage",
+  "order": 10,
+  "description": "S3-compatible storage in Docker. Good for local work.",
+  "dockerService": "minio"
+}

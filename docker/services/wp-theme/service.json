@@ -1,0 +1,13 @@
+{
+  "name": "wordpress",
+  "image": "wordpress:latest",
+  "ports": ["8080:80"],
+  "environment": {
+    "WORDPRESS_DB_HOST": "mysql",
+    "WORDPRESS_DB_USER": "app",
+    "WORDPRESS_DB_PASSWORD": "app",
+    "WORDPRESS_DB_NAME": "app"
+  },
+  "volumes": [".:/var/www/html/wp-content/themes/appseed"],
+  "depends_on": ["mysql"]
+}

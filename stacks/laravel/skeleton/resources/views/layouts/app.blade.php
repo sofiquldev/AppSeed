@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <title>{{ $title ?? config('app.name') }}</title>
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+</head>
+<body>
+    <div class="app-shell">
+        <aside class="sidebar">
+            <a class="brand" href="{{ route('dashboard') }}">{{ config('app.name') }}</a>
+            <nav>
+                <a href="{{ route('dashboard') }}" class="{{ request()->routeIs('dashboard') ? 'active' : '' }}">Dashboard</a>
+                {{-- <appseed:nav> --}}
+                {{-- </appseed:nav> --}}
+            </nav>
+            <form method="POST" action="{{ route('logout') }}" class="sidebar-footer">
+                @csrf
+                <div class="muted">{{ auth()->user()->name }}</div>
+                <button type="submit" class="linkish">Log out</button>
+            </form>
+        </aside>
+        <main class="main">
+            <header class="topbar">
+                <h1>{{ $heading ?? 'Dashboard' }}</h1>
+            </header>
+            {{ $slot }}
+        </main>
+    </div>
+</body>
+</html>

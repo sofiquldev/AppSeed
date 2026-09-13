@@ -1,0 +1,14 @@
+{
+  "id": "auth",
+  "stack": "nextjs",
+  "name": "Auth",
+  "dependsOn": [],
+  "files": "files",
+  "patches": [
+    {
+      "file": "components/LandingShell.js",
+      "marker": "appseed:landing-nav",
+      "insert": "          <Link href=\"/login\">Log in</Link>\n          <Link className=\"btn\" href=\"/register\">Get started</Link>\n"
+    }
+  ]
+}

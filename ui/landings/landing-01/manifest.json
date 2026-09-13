@@ -1,0 +1,7 @@
+{
+  "id": "landing-01",
+  "name": "Landing 01",
+  "kind": "landing",
+  "description": "Hero, features, short CTA.",
+  "preview": "preview.svg"
+}

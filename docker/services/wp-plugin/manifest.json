@@ -1,0 +1,6 @@
+{
+  "id": "wp-plugin",
+  "name": "WordPress",
+  "kind": "image",
+  "description": "Official WordPress image. Plugin mounted in. No custom Dockerfile."
+}

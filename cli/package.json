@@ -1,0 +1,12 @@
+{
+  "name": "@appseed/cli",
+  "version": "0.1.0",
+  "type": "module",
+  "bin": {
+    "appseed": "./bin/appseed.js"
+  },
+  "exports": {
+    ".": "./src/index.js",
+    "./merge": "./src/lib/merge.js"
+  }
+}

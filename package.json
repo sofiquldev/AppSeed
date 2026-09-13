@@ -1,0 +1,14 @@
+{
+  "name": "appseed",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "cli",
+    "apps/web"
+  ],
+  "scripts": {
+    "appseed": "node cli/bin/appseed.js",
+    "web": "npm run dev --workspace=apps/web",
+    "test": "node --test cli/test/*.test.js"
+  }
+}

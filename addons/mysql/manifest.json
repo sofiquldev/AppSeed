@@ -1,0 +1,8 @@
+{
+  "id": "mysql",
+  "name": "MySQL",
+  "group": "database",
+  "order": 20,
+  "description": "A real database. Use this if the host already runs MySQL.",
+  "dockerService": "mysql"
+}

@@ -1,0 +1,20 @@
+{
+  "id": "wp-theme",
+  "name": "WordPress theme",
+  "version": "1.0.0",
+  "description": "A WordPress theme. Drop it in wp-content/themes.",
+  "fits": ["landing"],
+  "hasAuth": false,
+  "showAddons": false,
+  "skeleton": "skeleton",
+  "dockerServices": ["wp-theme", "mysql"],
+  "envFile": ".env.example",
+  "smoke": {
+    "requiredFiles": ["style.css", "functions.php", "index.php", "GETTING_STARTED.md"]
+  },
+  "run": {
+    "install": [],
+    "dev": "docker compose up",
+    "docker": "docker compose up"
+  }
+}

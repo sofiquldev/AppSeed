@@ -1,0 +1,16 @@
+node_modules/
+dist/
+.next/
+out/
+output/
+.turbo/
+.cache/
+*.log
+.env
+.env.local
+.DS_Store
+vendor/
+.phpunit.result.cache
+apps/web/.next/
+*.zip
+.vercel

@@ -1,0 +1,10 @@
+/*
+Theme Name: AppSeed Theme
+Theme URI: https://example.com
+Author: AppSeed
+Description: {{APPSEED_TAGLINE}}. A small starter theme.
+Version: 1.0.0
+Text Domain: appseed
+*/
+
+@import url("assets/app.css");

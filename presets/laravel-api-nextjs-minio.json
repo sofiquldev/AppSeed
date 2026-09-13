@@ -1,0 +1,9 @@
+{
+  "id": "laravel-api-nextjs-minio",
+  "name": "Laravel API + Next.js + MinIO",
+  "description": "A typical split app. Two Dockerfiles (api, web). MinIO and Postgres are public images.",
+  "services": ["laravel", "nextjs"],
+  "addons": ["postgres", "minio"],
+  "dockerfiles": ["laravel", "nextjs"],
+  "images": ["postgres", "minio"]
+}

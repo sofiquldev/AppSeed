@@ -1,0 +1,6 @@
+{
+  "name": "web",
+  "image": "nginx:alpine",
+  "ports": ["8080:80"],
+  "volumes": [".:/usr/share/nginx/html:ro"]
+}

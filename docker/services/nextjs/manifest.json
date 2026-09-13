@@ -1,0 +1,6 @@
+{
+  "id": "nextjs",
+  "name": "Next.js",
+  "kind": "app",
+  "description": "Node app image. One Dockerfile. Compose wires it."
+}

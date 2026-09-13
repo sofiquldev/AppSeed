@@ -1,0 +1,62 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Version tag, e.g. v0.1.0"
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - run: npm test
+
+      - name: Resolve tag
+        id: ver
+        run: |
+          if [ "${GITHUB_EVENT_NAME}" = "workflow_dispatch" ]; then
+            TAG="${{ inputs.tag }}"
+          else
+            TAG="${GITHUB_REF_NAME}"
+          fi
+          case "$TAG" in
+            v*) ;;
+            *) TAG="v${TAG}" ;;
+          esac
+          echo "tag=${TAG}" >> "$GITHUB_OUTPUT"
+          echo "name=${TAG#v}" >> "$GITHUB_OUTPUT"
+
+      - name: Pack source
+        run: |
+          git archive \
+            --format=zip \
+            --prefix="appseed-${{ steps.ver.outputs.name }}/" \
+            --output="appseed-${{ steps.ver.outputs.name }}.zip" \
+            HEAD
+
+      - name: Publish GitHub Release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release create "${{ steps.ver.outputs.tag }}" \
+            "appseed-${{ steps.ver.outputs.name }}.zip" \
+            --title "AppSeed ${{ steps.ver.outputs.tag }}" \
+            --generate-notes \
+            --target "${{ github.sha }}"

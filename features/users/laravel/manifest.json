@@ -1,0 +1,20 @@
+{
+  "id": "users",
+  "stack": "laravel",
+  "name": "Users",
+  "description": "Basic user list and edit.",
+  "dependsOn": [],
+  "files": "files",
+  "patches": [
+    {
+      "file": "routes/web.php",
+      "marker": "appseed:routes",
+      "insert": "    Route::get('/users', [\\App\\Http\\Controllers\\UserController::class, 'index'])->name('users.index');\n    Route::get('/users/{user}/edit', [\\App\\Http\\Controllers\\UserController::class, 'edit'])->name('users.edit');\n    Route::put('/users/{user}', [\\App\\Http\\Controllers\\UserController::class, 'update'])->name('users.update');\n"
+    },
+    {
+      "file": "resources/views/layouts/app.blade.php",
+      "marker": "appseed:nav",
+      "insert": "                <a href=\"{{ route('users.index') }}\" class=\"{{ request()->routeIs('users.*') ? 'active' : '' }}\">Users</a>\n"
+    }
+  ]
+}

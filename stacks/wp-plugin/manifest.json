@@ -1,0 +1,20 @@
+{
+  "id": "wp-plugin",
+  "name": "WordPress plugin",
+  "version": "1.0.0",
+  "description": "A small WordPress plugin. Drop it in wp-content/plugins.",
+  "fits": ["plugin"],
+  "hasAuth": false,
+  "showAddons": false,
+  "skeleton": "skeleton",
+  "dockerServices": ["wp-plugin", "mysql"],
+  "envFile": ".env.example",
+  "smoke": {
+    "requiredFiles": ["appseed-plugin.php", "readme.txt", "GETTING_STARTED.md"]
+  },
+  "run": {
+    "install": [],
+    "dev": "docker compose up",
+    "docker": "docker compose up"
+  }
+}

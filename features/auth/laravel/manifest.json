@@ -1,0 +1,20 @@
+{
+  "id": "auth",
+  "stack": "laravel",
+  "name": "Auth",
+  "description": "Login, registration, and password reset for this stack.",
+  "dependsOn": [],
+  "files": "files",
+  "patches": [
+    {
+      "file": "routes/auth.php",
+      "marker": "appseed:auth-routes",
+      "insert": "    Route::get('/forgot-password', [\\App\\Http\\Controllers\\Auth\\PasswordResetLinkController::class, 'create'])->name('password.request');\n    Route::post('/forgot-password', [\\App\\Http\\Controllers\\Auth\\PasswordResetLinkController::class, 'store'])->name('password.email');\n    Route::get('/reset-password/{token}', [\\App\\Http\\Controllers\\Auth\\NewPasswordController::class, 'create'])->name('password.reset');\n    Route::post('/reset-password', [\\App\\Http\\Controllers\\Auth\\NewPasswordController::class, 'store'])->name('password.store');\n"
+    },
+    {
+      "file": "resources/views/auth/login.blade.php",
+      "marker": "appseed:auth-extra",
+      "insert": "        <p class=\"muted\"><a href=\"{{ route('password.request') }}\">Forgot password?</a></p>\n"
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "id": "postgres",
+  "name": "Postgres",
+  "group": "database",
+  "order": 10,
+  "description": "A real database. Usual pick when SQLite is not enough.",
+  "dockerService": "postgres"
+}

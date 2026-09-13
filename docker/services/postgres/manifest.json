@@ -1,0 +1,6 @@
+{
+  "id": "postgres",
+  "name": "Postgres",
+  "kind": "image",
+  "description": "Official Postgres image. No custom Dockerfile."
+}

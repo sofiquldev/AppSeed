@@ -1,0 +1,37 @@
+{
+  "id": "laravel",
+  "name": "Laravel",
+  "version": "1.0.0",
+  "description": "PHP. Pages, login, and a dashboard.",
+  "fits": ["landing", "dashboard", "both"],
+  "hasAuth": true,
+  "showAddons": true,
+  "skeleton": "skeleton",
+  "dockerService": "laravel",
+  "envFile": ".env.example",
+  "smoke": {
+    "requiredFiles": [
+      "artisan",
+      "composer.json",
+      "routes/web.php",
+      "resources/views/welcome.blade.php",
+      "resources/views/dashboard.blade.php",
+      "resources/views/auth/login.blade.php",
+      "GETTING_STARTED.md"
+    ],
+    "command": "php",
+    "args": ["artisan", "--version"]
+  },
+  "run": {
+    "install": [
+      "composer install",
+      "cp .env.example .env",
+      "php artisan key:generate",
+      "php artisan migrate --force",
+      "npm install",
+      "npm run build"
+    ],
+    "dev": "php artisan serve",
+    "docker": "docker compose up"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "id": "html",
+  "name": "HTML",
+  "kind": "image",
+  "description": "Official nginx image. No custom Dockerfile."
+}

@@ -1,0 +1,7 @@
+{
+  "id": "dashboard-01",
+  "name": "Dashboard 01",
+  "kind": "dashboard",
+  "description": "Sidebar layout, stats row, recent activity.",
+  "preview": "preview.svg"
+}

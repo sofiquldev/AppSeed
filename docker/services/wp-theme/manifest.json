@@ -1,0 +1,6 @@
+{
+  "id": "wp-theme",
+  "name": "WordPress",
+  "kind": "image",
+  "description": "Official WordPress image. Theme mounted in. No custom Dockerfile."
+}

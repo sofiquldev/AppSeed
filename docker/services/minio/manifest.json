@@ -1,0 +1,6 @@
+{
+  "id": "minio",
+  "name": "MinIO",
+  "kind": "image",
+  "description": "Official MinIO image. No custom Dockerfile."
+}

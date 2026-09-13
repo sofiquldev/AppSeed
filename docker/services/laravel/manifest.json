@@ -1,0 +1,6 @@
+{
+  "id": "laravel",
+  "name": "Laravel",
+  "kind": "app",
+  "description": "PHP app image. One Dockerfile. Compose wires it."
+}

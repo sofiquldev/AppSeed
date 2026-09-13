@@ -1,0 +1,28 @@
+{
+  "id": "nextjs",
+  "name": "Next.js",
+  "version": "1.0.0",
+  "description": "JavaScript. A modern site or dashboard.",
+  "fits": ["landing", "dashboard", "both"],
+  "hasAuth": true,
+  "showAddons": true,
+  "skeleton": "skeleton",
+  "dockerService": "nextjs",
+  "envFile": ".env.example",
+  "smoke": {
+    "requiredFiles": [
+      "package.json",
+      "app/page.js",
+      "app/dashboard/page.js",
+      "app/tokens.css",
+      "GETTING_STARTED.md"
+    ],
+    "command": "node",
+    "args": ["-e", "JSON.parse(require('fs').readFileSync('package.json','utf8'))"]
+  },
+  "run": {
+    "install": ["npm install", "cp .env.example .env.local"],
+    "dev": "npm run dev",
+    "docker": "docker compose up"
+  }
+}

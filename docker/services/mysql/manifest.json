@@ -1,0 +1,6 @@
+{
+  "id": "mysql",
+  "name": "MySQL",
+  "kind": "image",
+  "description": "Official MySQL image. No custom Dockerfile."
+}

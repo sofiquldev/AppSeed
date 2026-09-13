@@ -1,0 +1,7 @@
+{
+  "id": "wasabi",
+  "name": "Wasabi",
+  "group": "storage",
+  "order": 30,
+  "description": "S3-compatible cloud storage. Put the keys in .env after you generate."
+}

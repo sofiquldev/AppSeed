@@ -1,0 +1,14 @@
+{
+  "id": "users",
+  "stack": "nextjs",
+  "name": "Users",
+  "dependsOn": [],
+  "files": "files",
+  "patches": [
+    {
+      "file": "components/AppShell.js",
+      "marker": "appseed:nav",
+      "insert": "          <Link href=\"/users\">Users</Link>\n"
+    }
+  ]
+}

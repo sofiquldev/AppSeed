@@ -1,0 +1,19 @@
+{
+  "id": "dark",
+  "name": "Dark",
+  "tokens": {
+    "color-bg": "#0b1220",
+    "color-surface": "#121a2b",
+    "color-surface-2": "#1a2438",
+    "color-border": "#243049",
+    "color-text": "#e8eefc",
+    "color-muted": "#93a0b8",
+    "color-accent": "#38bdf8",
+    "color-accent-hover": "#7dd3fc",
+    "color-accent-text": "#0b1220",
+    "color-danger": "#f87171",
+    "shadow": "0 8px 24px rgba(0, 0, 0, 0.35)",
+    "font-sans": "Inter, ui-sans-serif, system-ui, sans-serif",
+    "radius": "12px"
+  }
+}

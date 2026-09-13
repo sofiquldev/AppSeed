@@ -1,0 +1,7 @@
+{
+  "id": "s3",
+  "name": "Amazon S3",
+  "group": "storage",
+  "order": 20,
+  "description": "Your AWS bucket. Put the keys in .env after you generate."
+}

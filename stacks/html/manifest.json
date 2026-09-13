@@ -1,0 +1,20 @@
+{
+  "id": "html",
+  "name": "HTML",
+  "version": "1.0.0",
+  "description": "Plain HTML and CSS. No build step. Fine for a landing page.",
+  "fits": ["landing"],
+  "hasAuth": false,
+  "showAddons": false,
+  "skeleton": "skeleton",
+  "dockerService": "html",
+  "envFile": ".env.example",
+  "smoke": {
+    "requiredFiles": ["index.html", "css/app.css", "css/tokens.css", "GETTING_STARTED.md"]
+  },
+  "run": {
+    "install": [],
+    "dev": "python3 -m http.server 8080",
+    "docker": "docker compose up"
+  }
+}
