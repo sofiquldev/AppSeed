@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AppSeed</title>
+  <meta name="description" content="Compose a project from a stack, features, and a UI kit. Get a folder that boots." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #ffffff;
+      --ink: #101828;
+      --muted: #667085;
+      --line: #d0d5dd;
+      --blue: #1570ef;
+      --blue-hover: #1366d6;
+      --blue-text: #ffffff;
+      --font: Inter, ui-sans-serif, system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; min-height: 100%; }
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.45;
+      font-size: 20px;
+    }
+    a { color: var(--blue); text-decoration: none; }
+    a:hover { color: var(--blue-hover); }
+    .wrap {
+      width: min(760px, 100%);
+      padding: 4.5rem 7vw 3rem;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 1.15rem;
+      font-weight: 600;
+      margin-bottom: 3.2rem;
+    }
+    .mark { width: 26px; height: 26px; }
+    h1 {
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      line-height: 1.12;
+      letter-spacing: -0.03em;
+      margin: 0 0 1rem;
+      font-weight: 700;
+    }
+    .lead {
+      margin: 0 0 2rem;
+      color: var(--muted);
+      font-size: 1.15rem;
+      max-width: 36rem;
+    }
+    .actions { display: flex; flex-wrap: wrap; gap: 0.7rem; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 999px;
+      padding: 0.7rem 1.15rem;
+      font-weight: 600;
+      font-size: 1rem;
+    }
+    .btn-primary {
+      background: var(--blue);
+      color: var(--blue-text);
+    }
+    .btn-primary:hover { background: var(--blue-hover); color: var(--blue-text); }
+    .btn-ghost {
+      border: 1px solid var(--line);
+      color: var(--ink);
+    }
+    .btn-ghost:hover { color: var(--ink); background: #f8fafc; }
+    h2 {
+      margin: 3.4rem 0 1rem;
+      font-size: 1.05rem;
+      font-weight: 600;
+    }
+    ol, ul { margin: 0; padding-left: 1.2rem; color: var(--muted); }
+    li { margin: 0.35rem 0; }
+    pre {
+      margin: 1rem 0 0;
+      padding: 1rem 1.1rem;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      overflow: auto;
+      font-size: 0.92rem;
+      line-height: 1.5;
+      background: #f8fafc;
+    }
+    footer {
+      margin-top: 4rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <div class="brand">
+      <svg class="mark" viewBox="0 0 24 24" aria-hidden="true">
+        <rect width="24" height="24" rx="6" fill="#1570ef" />
+        <path d="M7 16V8h3.2c1.9 0 3.1 1 3.1 2.6 0 1.7-1.3 2.7-3.2 2.7H9.2V16H7zm2.2-4.3h.9c.8 0 1.3-.4 1.3-1.1S11 9.5 10.1 9.5H9.2v2.2z" fill="#fff" />
+      </svg>
+      AppSeed
+    </div>
+    <h1>Pick a stack. Get a folder that boots.</h1>
+    <p class="lead">A project composer. Laravel, Next.js, HTML, or WordPress. Features, a UI kit, Docker only where we actually build an image.</p>
+    <div class="actions">
+      <a class="btn btn-primary" href="https://github.com/sofiquldev/AppSeed/releases/latest">Latest release</a>
+      <a class="btn btn-ghost" href="https://github.com/sofiquldev/AppSeed">GitHub</a>
+    </div>
+
+    <h2>Run it</h2>
+    <pre><code>git clone https://github.com/sofiquldev/AppSeed.git
+cd AppSeed
+npm install
+npm run web</code></pre>
+
+    <h2>Or the CLI</h2>
+    <pre><code>node cli/bin/appseed.js new --stack laravel --name demo --out ./output/demo</code></pre>
+
+    <h2>What you get</h2>
+    <ol>
+      <li>A real stack skeleton, not a translated mock.</li>
+      <li>Optional auth, users, database, and storage addons.</li>
+      <li>One Dockerfile per app we build. Official images for Postgres, MySQL, MinIO.</li>
+      <li>A zip, a local git repo, or a GitHub push.</li>
+    </ol>
+
+    <footer>Built with AppSeed. The picker at localhost:3000 needs the repo — GitHub Pages is this public page.</footer>
+  </main>
+</body>
+</html>

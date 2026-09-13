@@ -1,5 +1,9 @@
 # AppSeed
 
+[![CI](https://github.com/sofiquldev/AppSeed/actions/workflows/ci.yml/badge.svg)](https://github.com/sofiquldev/AppSeed/actions/workflows/ci.yml)
+[![Release](https://img.shields.io/github/v/release/sofiquldev/AppSeed?display_name=tag)](https://github.com/sofiquldev/AppSeed/releases/latest)
+[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-live-1570ef)](https://sofiquldev.github.io/AppSeed/)
+
 A project composer. You pick a stack, a couple of features, a UI kit. You get a folder that boots.
 
 This is not a React-to-Blade compiler. Each stack keeps its own markup. Themes are CSS variables. Features are per-stack overlays with a manifest.
@@ -126,7 +130,7 @@ npm test
 
 ## Release
 
-Push a version tag. GitHub Actions runs tests, then publishes a zip on the Releases page.
+Push a version tag. GitHub Actions runs tests, publishes a zip on the Releases page, and deploys the public site to [GitHub Pages](https://sofiquldev.github.io/AppSeed/).
 
 ```bash
 git tag v0.1.0
@@ -134,6 +138,8 @@ git push origin v0.1.0
 ```
 
 Or run the **Release** workflow from the Actions tab and type the tag (`v0.1.0`).
+
+The picker (`npm run web`) still runs locally. Pages is the project site, not the generator.
 
 ## Later (not now)
 
