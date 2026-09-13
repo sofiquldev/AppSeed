@@ -20,7 +20,7 @@
       "GETTING_STARTED.md"
     ],
     "command": "php",
-    "args": ["artisan", "--version"]
+    "args": ["-l", "artisan"]
   },
   "run": {
     "install": [
