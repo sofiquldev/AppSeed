@@ -72,20 +72,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Ensure GitHub Pages uses Actions
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          if gh api "repos/${GITHUB_REPOSITORY}/pages" >/dev/null 2>&1; then
-            gh api --method PUT "repos/${GITHUB_REPOSITORY}/pages" \
-              -f build_type=workflow || true
-          else
-            gh api --method POST "repos/${GITHUB_REPOSITORY}/pages" \
-              -f build_type=workflow \
-              -f "source[branch]=main" \
-              -f "source[path]=/"
-          fi
-
       - uses: actions/configure-pages@v5
 
       - uses: actions/upload-pages-artifact@v3

@@ -132,6 +132,8 @@ npm test
 
 Push a version tag. GitHub Actions runs tests, publishes a zip on the Releases page, and deploys the public site to [GitHub Pages](https://sofiquldev.github.io/AppSeed/).
 
+One-time: repo **Settings → Pages → Build and deployment → Source: GitHub Actions**. The token in Actions cannot turn Pages on by itself.
+
 ```bash
 git tag v0.1.0
 git push origin v0.1.0
